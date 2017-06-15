@@ -6,6 +6,7 @@ module LoginHelper
   end
 
   def user_signup
+
     fill_in("user[name]", :with => "Amy Poehler")
     fill_in("user[height]", :with => "58")
     fill_in("user[happiness]", :with => "3")
@@ -55,14 +56,14 @@ module LoginHelper
       height: 50
     )
     @walt = User.create(
-        name: "Walt Disney",
-        password: "password",
-        happiness: 3,
-        nausea: 2,
-        tickets: 15,
-        height: 58,
-        admin: true
-      )
+      name: "Walt Disney",
+      password: "password",
+      happiness: 3,
+      nausea: 2,
+      tickets: 15,
+      height: 58,
+      admin: true
+    )
     fill_in("user[name]", :with => "Walt Disney")
     fill_in("user[password]", :with => "password")
     click_button('Sign In')

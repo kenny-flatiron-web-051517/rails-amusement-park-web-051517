@@ -1,40 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :users
+  resources :attractions
 
-  get 'session/new'
+  get '/signin', to: 'sessions#new'
+  post '/signin', to: 'sessions#create'
 
-  get 'session/create'
+  delete '/signout', to: 'sessions#destroy'
 
-  get 'session/destroy'
-
-  get 'attraction/index'
-
-  get 'attraction/new'
-
-  get 'attraction/create'
-
-  get 'attraction/edit'
-
-  get 'attraction/update'
-
-  get 'attraction/show'
-
-  get 'attraction/destroy'
-
-  get 'user/new'
-
-  get 'user/create'
-
-  get 'user/edit'
-
-  get 'user/update'
-
-  get 'user/show'
-
-  get 'user/destroy'
-
-  get 'user/login'
-
-  get 'user/verify_login'
-
+  root 'sessions#welcome'
 end
