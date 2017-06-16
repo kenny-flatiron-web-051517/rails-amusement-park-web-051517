@@ -1,19 +1,21 @@
-<h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
+<% if @user.admin %>
+<h4>ADMIN</h4>
+<% end %>
 
-<label name="name">
-<%= @user.name %>
-
-<%= @user.height %>
-
-<label name="mood">Mood</label>
-<%= @user.mood %>
-
+<h1>
+<label name="name"></label>
+<%= @user.name %><br>
+</h1>
+<label name="height">Height: </label>
+<%= @user.height %><br>
+<label name="mood">Mood: </label>
+<%= @user.mood %><br>
 <label name="mood">happy</label>
-<%= @user.happiness %>
-
+<%= @user.happiness %><br>
 <label name="mood">Nauseous?</label>
-<%= @user.nausea %>
-
-<label name="mood">Tickets</label>
-<%= @user.tickets %>
+<%= @user.nausea %><br>
+<label name="mood">Tickets: </label>
+<%= @user.tickets %><br>
+<br>
+<a id="Edit profile" href="<%= edit_user_url %>"/>Edit profile</a><br>
+<a id="See attractions" href="<%= attractions_url %>"/>See attractions</a>

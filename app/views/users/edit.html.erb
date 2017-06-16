@@ -1,2 +1,22 @@
-<h1>User#edit</h1>
-<p>Find me in app/views/user/edit.html.erb</p>
+<h1>Edit User: </h1>
+
+<% if @user.admin %>
+<h4>ADMIN</h4>
+<% end %>
+
+
+<%= form_for(@user) do |f| %>
+<h1><%= f.label :name %><br></h1>
+<%= f.text_field :name %><br>
+<%= f.label :password %><br>
+<%= f.password_field :password %><br>
+<%= f.label 'Nausea' %><br>
+<%= f.text_field :nausea %><br>
+<%= f.label 'Happiness' %><br>
+<%= f.text_field :happiness %><br>
+<%= f.label 'Tickets' %><br>
+<%= f.text_field :tickets %><br><br>
+<%= f.label 'Height' %><br>
+<%= f.text_field :height %><br><br>
+<%= f.submit %>
+<% end %>

@@ -1,5 +1,4 @@
-<h1>Session#new</h1>
-<p>Find me in app/views/session/new.html.erb</p>
+<h1>Please Sign In</h1><br>
 
 <%= form_for @user, url: signin_path, method: :post do |f| %>
   <%= f.label :name %><br>
@@ -7,7 +6,6 @@
 
   <%= f.label :password %><br>
   <%= f.password_field :password %><br>
-  <br>
   <br>
   <%= f.submit 'Sign In' %>
   <% end %>

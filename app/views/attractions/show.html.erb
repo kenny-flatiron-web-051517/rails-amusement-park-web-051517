@@ -1,2 +1,22 @@
-<h1>Attraction#show</h1>
-<p>Find me in app/views/attraction/show.html.erb</p>
+<h1>
+<label name="name"></label>
+<%= @attraction.name %><br>
+</h1>
+<label name="users">Total Number of Users: </label>
+<%= @attraction.users.count %><br>
+<label name="tickets">Ticket Price: </label>
+<%= @attraction.tickets %><br>
+<label name="nausea_rating">Nausea Rating: </label>
+<%= @attraction.nausea_rating %><br>
+<label name="happiness_rating">Happiness Rating: </label>
+<%= @attraction.happiness_rating %><br>
+<label name="min_height">Minimum Height Requirement: </label>
+<%= @attraction.min_height %><br>
+
+<% if current_user.admin %>
+  <p><%= link_to 'Edit Attraction', edit_attraction_path %></p>
+<% else %>
+  <%= button_to "Go on this ride", attractions_ride_path(@attraction)%>
+<% end %>
+<br>
+<%= link_to 'Back to attractions', attractions_path %>

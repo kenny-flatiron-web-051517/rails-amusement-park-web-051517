@@ -4,6 +4,10 @@ class AttractionsController < ApplicationController
     @attractions = Attraction.all
   end
 
+  def show
+    @attraction = Attraction.find(params[:id])
+  end
+
   def new
     @attraction = Attraction.new
   end
@@ -30,8 +34,10 @@ class AttractionsController < ApplicationController
     end
   end
 
-  def show
-    @attraction = Attraction.find(params[:id])
+  def ride
+    @ride = Ride.create(user_id: current_user.id, attraction_id: params[:format])
+    flash[:notice] = @ride.take_ride
+    redirect_to user_path(current_user)
   end
 
   def destroy
