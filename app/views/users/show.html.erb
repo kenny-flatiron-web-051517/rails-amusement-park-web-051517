@@ -1,19 +1,18 @@
-<h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
 
-<label name="name">
-<%= @user.name %>
+<label name="name"> <br>
+<%= @user.name %> <br>
 
-<%= @user.height %>
+<label name="height"> <br>
+<%= @user.height %> <br>
 
-<label name="mood">Mood</label>
-<%= @user.mood %>
+<label name="mood">Mood</label> <br>
+<%= @user.mood %> <br>
 
-<label name="mood">happy</label>
-<%= @user.happiness %>
+<label name="tickets">Tickets:</label> <br>
+<%= @user.tickets %> <br>
 
-<label name="mood">Nauseous?</label>
-<%= @user.nausea %>
-
-<label name="mood">Tickets</label>
-<%= @user.tickets %>
+<%= link_to "Edit", edit_user_path %> <br>
+<%= link_to "See attractions", attractions_path %> <br>

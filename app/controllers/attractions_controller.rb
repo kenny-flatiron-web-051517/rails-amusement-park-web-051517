@@ -1,4 +1,5 @@
 class AttractionsController < ApplicationController
+  before_action :verify_admin, except: [:index, :show]
 
   def index
     @attractions = Attraction.all
@@ -11,7 +12,7 @@ class AttractionsController < ApplicationController
   def create
     @attraction = Attraction.new(attraction_params)
     if @attraction.save
-      redirect_to attraction_path(@attraction)
+      redirect_to show_ride_path(@attraction)
     else
       render :new
     end
@@ -24,7 +25,7 @@ class AttractionsController < ApplicationController
   def update
     @attraction = Attraction.find(params[:id])
     if @attraction.update(attraction_params)
-      redirect_to attraction_path(@attraction)
+      redirect_to show_ride_path(@attraction)
     else
       render :edit
     end

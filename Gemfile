@@ -50,7 +50,7 @@ group :test, :development do
 end
 
 group :production do
-  gem "pg"
+  # gem "pg"
   gem "google-analytics-rails"
   gem "rails_12factor"
 end
