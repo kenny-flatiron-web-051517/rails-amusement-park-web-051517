@@ -14,5 +14,3 @@ test: &TEST
 production:
   <<: *default
   database: amusement_production
-  username: amusement
-  password: <%= ENV['AMUSEMENT_DATABASE_PASSWORD'] %>
