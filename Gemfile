@@ -45,7 +45,6 @@ group :test, :development do
   gem "simplecov"
   gem "database_cleaner"
   gem "pg"
-  gem "pry"
   gem "rack_session_access"
 end
 
