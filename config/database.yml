@@ -11,14 +11,14 @@ test: &TEST
   <<: *default
   database: amusement_development
 
-staging:
-  url: <%= ENV['DATABASE_URL'] %>
+# staging:
+#   url: <%= ENV['DATABASE_URL'] %>
+#
+# production:
+#   url: <%= ENV['DATABASE_URL'] %>
 
 production:
-  url: <%= ENV['DATABASE_URL'] %>
-
-# production:
-#   <<: *default
-#   database: amusement_production
-#   username: amusement
-#   password: <%= ENV['AMUSEMENT_DATABASE_PASSWORD'] %>
+  <<: *default
+  database: amusement_production
+  username: amusement
+  password: <%= ENV['AMUSEMENT_DATABASE_PASSWORD'] %>
