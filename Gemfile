@@ -46,6 +46,7 @@ group :test, :development do
   gem "database_cleaner"
   gem "pg"
   gem "rack_session_access"
+  gem "pry"
 end
 
 group :production do
